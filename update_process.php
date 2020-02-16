@@ -1,7 +1,7 @@
 <?php
 	require_once "config.php";
 
-	if(isset($_POST["id"]) && !empty($_POST["id"])) {
+	if(isset($_POST["id"]) && is_numeric($_POST["id"]) && !empty($_POST["id"]) && $_POST['id'] !== '') {
 		$id = $_POST["id"];
 	} else {
 		echo "There is a problem with your ID.";
@@ -37,5 +37,6 @@
     	echo "Oops! Something went wrong.";
     }
 
-    
+    unset($stmt);
+    unset($pdo);
 ?>

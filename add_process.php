@@ -35,4 +35,6 @@
     echo "Something went wrong.";
   }
 
+  unset($stmt);
+  unset($pdo);
 ?>
